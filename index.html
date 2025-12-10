@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PeerJS 简单聊天</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; }
+        #chatBox { border: 1px solid #ccc; height: 300px; overflow-y: scroll; padding: 10px; margin-bottom: 10px; }
+        .message { margin: 5px 0; }
+        .self { color: blue; text-align: right; }
+        .remote { color: green; }
+        .system { color: gray; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h2>PeerJS 聊天室</h2>
+    <div>
+        <p><strong>你的ID：</strong><span id="myId">正在生成...</span></p>
+        <input type="text" id="friendId" placeholder="输入对方的 Peer ID">
+        <button onclick="connectToPeer()">连接</button>
+    </div>
+    <hr>
+    <div id="chatBox"></div>
+    <div>
+        <input type="text" id="messageInput" placeholder="输入消息..." style="width:70%;">
+        <button onclick="sendMessage()" style="width:25%;">发送</button>
+    </div>
+
+    <!-- 关键：引入 PeerJS 库 -->
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <!-- 引入我们自己的逻辑 -->
+    <script src="client.js"></script>
+</body>
+</html>
